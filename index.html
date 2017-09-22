@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body style="left:0;top:0;padding:1em;color:dark-grey; font-size: calc(1em + 2vh + 2vw); font-family:monospace;">
+
+<a onclick="getLocation();" style="font-size:3em;">&#9758;</a>
+
+<br>
+
+<a id="m">&nbsp;<br>&nbsp;<br>&nbsp;</a>
+
+<script>
+var x = document.getElementById("m");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";}
+    }
+    
+function showPosition(position) {
+    x.innerHTML="Lat: " + Math.round(10000 * position.coords.latitude)/10000 + 
+    "<br>Long: " + Math.round(10000 * position.coords.longitude)/10000 + "<br>Alt: " + Math.round(100 * position.coords.altitude)/100;
+}
+</script>
+
+</body>
+</html>
