@@ -1,2 +1,0 @@
-# latlongalt.github.io
-## Viva
